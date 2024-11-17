@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outil d'impression en ligne</title>
+</head>
+<body>
+    <h1>Écrivez votre texte :</h1>
+    <form method="POST">
+        <input type="text" name="text" value="{{ text }}" placeholder="Entrez votre texte ici">
+        <button type="submit">Générer</button>
+    </form>
+
+    {% if image_url %}
+        <h2>Image générée :</h2>
+        <img src="{{ image_url }}" alt="Texte généré">
+        <br>
+        <a href="/download">Télécharger l'image</a>
+    {% endif %}
+</body>
+</html>
